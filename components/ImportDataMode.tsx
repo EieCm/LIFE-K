@@ -36,14 +36,6 @@ const ImportDataMode: React.FC<ImportDataModeProps> = ({ onDataImport }) => {
     const [jsonInput, setJsonInput] = useState('');
     const [copied, setCopied] = useState(false);
     const [error, setError] = useState<string | null>(null);
-    
-    // 常见城市列表
-    const commonCities = [
-        '北京', '上海', '广州', '深圳', '杭州', '南京', '成都', '重庆', '武汉', 
-        '西安', '天津', '苏州', '长沙', '郑州', '济南', '青岛', '大连', '沈阳',
-        '哈尔滨', '长春', '石家庄', '太原', '呼和浩特', '乌鲁木齐', '拉萨', 
-        '昆明', '贵阳', '南宁', '海口', '福州', '厦门', '南昌', '合肥', '香港', '澳门', '台北'
-    ];
 
     // 自动排盘
     const handleAutoCalculate = () => {
@@ -340,16 +332,14 @@ const ImportDataMode: React.FC<ImportDataModeProps> = ({ onDataImport }) => {
                                     <MapPin className="w-3 h-3 inline mr-1" />
                                     出生地点
                                 </label>
-                                <select
+                                <input
+                                    type="text"
                                     name="birthPlace"
                                     value={autoInput.birthPlace}
                                     onChange={(e) => setAutoInput({ ...autoInput, birthPlace: e.target.value })}
-                                    className="w-full px-3 py-2 border border-blue-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none bg-white font-bold"
-                                >
-                                    {commonCities.map(city => (
-                                        <option key={city} value={city}>{city}</option>
-                                    ))}
-                                </select>
+                                    placeholder="如: 北京"
+                                    className="w-full px-3 py-2 border border-blue-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none bg-white font-bold shadow-sm hover:border-blue-400 transition-colors"
+                                />
                             </div>
 
                             {error && (
