@@ -3,8 +3,6 @@
 **基于八字命理 + K 线可视化 + AI 大模型的人生命运可视化工具。**  
 输入公历生日、出生时间、出生地点与性别，系统自动排出生辰八字与大运，并通过 AI 生成 1–100 岁的人生 K 线图和详细命理报告。
 
-代码仓库：[`https://github.com/wjlkkk/lifekline`](https://github.com/wjlkkk/lifekline)
-
 ---
 
 ## ✨ 核心功能
